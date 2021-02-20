@@ -31,8 +31,10 @@
     "stylelint-processor-styled-components": "^1.10.0",
     "vite": "^2.0.1"
   },
-  "hooks": {
-    "pre-commit": "npm run lint:css && npm run lint:js:fix",
-    "pre-push": "npm run lint:css && npm run lint:js:fix && npm run test"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:css && npm run lint:js:fix",
+      "pre-push": "npm run lint:css && npm run lint:js:fix && npm run test"
+    }
   }
 }
