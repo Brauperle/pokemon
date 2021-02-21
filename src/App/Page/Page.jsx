@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { PageStyled } from './Page.styled'
 
 const Page = (props) => {

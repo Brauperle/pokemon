@@ -2,29 +2,36 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {useQuery} from "react-query";
 import {getPokemons} from "../../api/api"
+import Container from "../Container/Container";
+import {ListContainer,ListPokemons,ListPokemon} from "./List.styled";
 
 const List = () => {
 
     const {
         data,
         isLoading,
-        isError
+        isError,
+        isSuccess
     } = useQuery('pokemons', () => getPokemons({limit: 10000, offset: 0}));
 
-    if(isLoading) return <p>Loading...</p>
-    if(isError) return <p>Error..!</p>
-
-    const {
-        count,
-        next,
-        previous,
-        results
-    } = data;
-
     return (
-        <>
-            {results.map(pokemon => (<p key={pokemon.name}><Link to={`/${pokemon.name}`}>{pokemon.name}</Link></p>))}
-        </>
+        <Container>
+            <ListContainer>
+                {isLoading && (<p>Loading...</p>)}
+                {isError && (<p>Error..!?</p>)}
+                {isSuccess && (
+                    <ListPokemons>
+                        {data.results && data.results.map(pokemon => (
+                            <ListPokemon key={pokemon.name}>
+                                <Link to={`/${pokemon.name}`}>
+                                    {pokemon.name}
+                                </Link>
+                            </ListPokemon>
+                        ))}
+                    </ListPokemons>
+                )}
+            </ListContainer>
+        </Container>
     )
 }
 
