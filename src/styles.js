@@ -8,7 +8,7 @@ mixins
 
 export const mixins = {
   calclineheight: rem => {
-    const px = rem * 10
+    const px = rem.split("rem")[0] * 10
     const lh = px * 1.4
     const lhrem = lh / 10
     return lhrem
@@ -56,7 +56,15 @@ const radius = {
   big: '.8rem'
 }
 
+const shared = {
+  typo: typo,
+  radius: radius,
+  media: media,
+  breakpoints: breakpoints
+}
+
 export const themeLight = {
+  ...shared,
   colors: {
     highlight: '#3C5AA6',
     highlightSecondary: '#FFCB05',
@@ -72,14 +80,11 @@ export const themeLight = {
         0 3px 6px 0px rgba(0,0,0,.08), 
         0 -12px 36px -8px rgba(0,0,0,.01)`,
     shadow4: 'rgb(216, 225, 232) 0px 2px 4px 0px'
-  },
-  typo: typo,
-  radius: radius,
-  media: media,
-  breakpoints: breakpoints
+  }
 }
 
 export const themeDark = {
+  ...shared,
   colors: {
     highlight: '#3C5AA6',
     highlightSecondary: '#FFCB05',
@@ -95,11 +100,7 @@ export const themeDark = {
         0 3px 6px 0px rgba(0,0,0,.5), 
         0 -12px 36px -8px rgba(0,0,0,.5)`,
     shadow4: '0 2px 4px rgba(0,0,0,.2)'
-  },
-  typo: typo,
-  radius: radius,
-  media: media,
-  breakpoints: breakpoints
+  }
 }
 
 /**
