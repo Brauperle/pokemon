@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { mixins } from '../shared/styles'
+import { mixins } from '../styles'
 export default createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -11,7 +11,7 @@ export default createGlobalStyle`
     font-family: Arial, Helvetica, sans-serif;
     color: ${props => props.theme.colors.textPrimary}; 
     font-size: ${props => props.theme.typo.typobase};
-    height:100vh;
+    min-height:100vh;
     width:100vw;
   }
 
