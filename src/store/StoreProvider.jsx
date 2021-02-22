@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react'
+import PropTypes from 'prop-types'
 
 export const INITIAL_STATE = {
   theme: 'dark',
@@ -25,6 +26,10 @@ const StoreContextProvider = ({ children }) => {
   }, INITIAL_STATE)
 
   return (<StoreContext.Provider value={{ state, dispatch, actions: ACTION_TYPES }}>{children}</StoreContext.Provider>)
+}
+
+StoreContextProvider.propTypes = {
+  children: PropTypes.any
 }
 
 export { StoreContext, StoreContextProvider }

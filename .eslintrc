@@ -20,5 +20,13 @@
   "rules": {
     "react/jsx-indent": ["error", 2, { "checkAttributes": true, "indentLogicalExpressions": true }],
     "react/jsx-indent-props": ["error", 2]
-  }
+  },
+  "overrides": [
+    {
+      "files": "./src/**/*",
+      "rules": {
+        "import/no-absolute-path": "off"
+      }
+    }
+  ]
 }

@@ -8,7 +8,7 @@ mixins
 
 export const mixins = {
   calclineheight: rem => {
-    const px = rem.split("rem")[0] * 10
+    const px = rem.split('rem')[0] * 10
     const lh = px * 1.4
     const lhrem = lh / 10
     return lhrem

@@ -1,13 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ListContainer = styled.section`
     min-height:100vh;
-`;
+`
 
 export const ListPokemons = styled.div`
     display:flex;
     flex-wrap:wrap;
-`;
+`
 
 export const ListPokemon = styled.article`
     padding:.8rem;
@@ -57,4 +57,4 @@ export const ListPokemon = styled.article`
             margin-right:0;
         }
     }
-`;
+`
