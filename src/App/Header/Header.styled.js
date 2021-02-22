@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
   padding-top:2.4rem;
@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
     padding-top:4.8rem;
     padding-bottom:4.8rem;
   }
-`;
+`
 
 export const HeaderLogo = styled.div`
   width : auto;
@@ -37,7 +37,7 @@ export const HeaderLogo = styled.div`
       height: 10rem;
     }
   } 
-`;
+`
 
 export const HeaderSelect = styled.select`
   position : fixed;

@@ -1,9 +1,9 @@
-import React,{useContext} from 'react'
-import {Link} from "react-router-dom"
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import Container from '../Container/Container'
 import { StoreContext } from '../../store/StoreProvider'
 import LogoUrl from '/logo.svg'
-import {HeaderContainer,HeaderLogo,HeaderSelect} from "./Header.styled";
+import { HeaderContainer, HeaderLogo, HeaderSelect } from './Header.styled'
 
 const Header = () => {
   const {
@@ -29,7 +29,7 @@ const Header = () => {
           <option value={'dark'}>Dark Theme</option>
           <option value={'light'}>Light Theme</option>
         </HeaderSelect>
-        
+
       </HeaderContainer>
     </Container>
   )

@@ -1,4 +1,4 @@
-import styled,{css} from "styled-components";
+import styled, { css } from 'styled-components'
 
 export const DetailContainer = styled.section`
     min-height:100vh;
@@ -59,7 +59,7 @@ export const DetailPokemonSection = styled.section`
         css`grid-area: ${props.gridArea};`
     )};
 
-    ${props => props.gridArea === "pSprites" && (
+    ${props => props.gridArea === 'pSprites' && (
         css`
             width:100%;
             height:24rem;
@@ -74,7 +74,7 @@ export const DetailPokemonSection = styled.section`
             }
         `
     )};
-    ${props => props.gridArea === "pName" && (
+    ${props => props.gridArea === 'pName' && (
         css`
             display:flex;
             align-items:center;
@@ -85,27 +85,27 @@ export const DetailPokemonSection = styled.section`
             }
         `
     )};
-    ${props => props.gridArea === "pMoves" && (
+    ${props => props.gridArea === 'pMoves' && (
         css`
             height:fit-content;
         `
     )};
-    ${props => props.gridArea === "pTypes" && (
+    ${props => props.gridArea === 'pTypes' && (
         css`
             height:fit-content;
         `
     )};
-`;
+`
 
 export const DetailPokemonSectionHeader = styled.div`
     font-size:1.6rem;
     border-bottom:.2rem ${props => props.theme.colors.border} solid;
-    background-color:${props=>props.theme.colors.backgroundTertiary};
+    background-color:${props => props.theme.colors.backgroundTertiary};
     padding:1.6rem;
     font-weight:bold;
-    border-top-left-radius:${props=>props.theme.radius.big};
-    border-top-right-radius:${props=>props.theme.radius.big};
-`;
+    border-top-left-radius:${props => props.theme.radius.big};
+    border-top-right-radius:${props => props.theme.radius.big};
+`
 
 export const DetailPokemonSectionItem = styled.div`
     font-size:1.4rem;

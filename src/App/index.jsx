@@ -4,8 +4,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import {QueryClient,QueryClientProvider} from 'react-query'
-import {ReactQueryDevtools} from 'react-query/devtools'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { ThemeProvider } from 'styled-components'
 import { StoreContext } from '../store/StoreProvider'
 
@@ -21,9 +21,7 @@ const queryClient = new QueryClient()
 
 const App = () => {
   const {
-    state,
-    dispatch,
-    actions
+    state
   } = useContext(StoreContext)
 
   return (
