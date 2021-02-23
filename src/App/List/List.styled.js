@@ -29,11 +29,16 @@ export const ListPokemon = styled.article`
         text-transform:capitalize;
     }
 
+    &:hover {
+        border:.2rem ${props => props.theme.colors.highlightSecondary} solid;
+        cursor:pointer;
+        & a {color: ${props => props.theme.colors.highlightSecondary};}  
+    }
     @media ${props => props.theme.media.small} {
         margin-bottom:.8rem;
         box-shadow: ${props => props.theme.shadows.shadow4};
         border:.2rem ${props => props.theme.colors.border} solid;
-        border-radius: ${props => props.theme.radius.big};
+        border-radius: ${props => props.theme.radius.base};
     }
 
     @media ${props => props.theme.media.medium} {
