@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './app/index.jsx'
+import App from './app/App'
 import { StoreContextProvider } from './store/StoreProvider'
 
 ReactDOM.render(
