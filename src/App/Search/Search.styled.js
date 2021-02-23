@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const SearchContainer = styled.div`
     margin-bottom:2.4rem;
@@ -12,7 +12,7 @@ export const SearchContainer = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-`;
+`
 
 export const SearchInput = styled.input`
     padding:.8rem 1.6rem;

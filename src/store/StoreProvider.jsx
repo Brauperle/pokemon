@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export const INITIAL_STATE = {
   theme: 'dark',
   toasts: [],
-  search: ""
+  search: ''
 }
 
 export const ACTION_TYPES = {
