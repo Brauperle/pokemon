@@ -1,30 +1,19 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-// import { nodeResolve } from '@rollup/plugin-node-resolve'
-// import {terser} from 'rollup-plugin-terser';
+// import commonjs from '@rollup/plugin-commonjs'
+// import babel from '@rollup/plugin-babel'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root:"./",
   plugins: [
     reactRefresh()
-  ],
-  build: {
-    // minify:"terser",
-    // terserOptions: {
-
+    // {
+    //   ...commonjs(), // CommonJS modules to ES6
+    //   apply: 'build' // Only used when using vite build
     // },
-    // cleanCssOptions: {
-
-    // },
-    // rollupOptions: {
-    //   plugins: [
-    //     // terser({
-    //     // })
-    //     // nodeResolve({
-    //     //   extensions: ['.js', '.jsx']
-    //     // })
-    //   ]
+    // {
+    //   ...babel(), // integration between Rollup and Babel
+    //   apply: 'build' // Only used when using vite build
     // }
-  }
+  ]
 })

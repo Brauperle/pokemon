@@ -8,7 +8,8 @@
     "lint:css": "stylelint ./src/**/*.js",
     "lint:js": "eslint . --ext js,jsx",
     "lint:js:fix": "eslint . --ext js,jsx --fix",
-    "test": "jest ./src/**/*"
+    "test": "jest ./src/**/*",
+    "deploy:vercel": "npm run build && vercel ./dist"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
