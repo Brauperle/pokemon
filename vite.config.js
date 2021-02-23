@@ -1,17 +1,17 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    reactRefresh(),
+    reactRefresh()
   ],
   build: {
     rollupOptions: {
-      plugins:[
+      plugins: [
         nodeResolve({
-          extensions:['.js', '.jsx']
+          extensions: ['.js', '.jsx']
         })
       ]
     }
