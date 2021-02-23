@@ -16,6 +16,7 @@ import Page from './Page/Page'
 import Header from './Header/Header'
 import List from './List/List'
 import Detail from './Detail/Detail'
+import Search from "./Search/Search"
 
 const queryClient = new QueryClient()
 
@@ -34,6 +35,7 @@ const App = () => {
             <Route exact path="/" render={() => (
               <Page>
                 <Header />
+                <Search />
                 <List />
               </Page>
             )} />

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 
 export const INITIAL_STATE = {
   theme: 'dark',
-  toasts: []
+  toasts: [],
+  search: ""
 }
 
 export const ACTION_TYPES = {
   UPDATE_THEME: 'UPDATE_THEME',
-  UPDATE_TOASTS: 'UPDATE_TOASTS'
+  UPDATE_TOASTS: 'UPDATE_TOASTS',
+  UPDATE_SEARCH: 'UPDATE_SEARCH'
 }
 
 const StoreContext = React.createContext(null)
@@ -20,6 +22,9 @@ const StoreContextProvider = ({ children }) => {
       }
       case (ACTION_TYPES.UPDATE_TOASTS) : {
         return { ...state, toasts: action.payload }
+      }
+      case (ACTION_TYPES.UPDATE_SEARCH) : {
+        return { ...state, search: action.payload }
       }
       default : throw new Error('UNEXPECTED ACTION')
     }
