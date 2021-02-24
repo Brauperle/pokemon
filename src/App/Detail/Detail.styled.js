@@ -19,17 +19,19 @@ export const DetailContainer = styled.section`
         padding-bottom:3.2rem;
         display : grid;
         grid-template-areas: 
-            "pName pName"
-            "pSprites pSprites"
-            "pMoves pTypes";
-        grid-template-columns: 1fr 1fr;
+            "pName"
+            "pSprites"
+            "pTypes"
+            "pMoves";
+        grid-template-columns: 1fr;
     }
     @media ${props => props.theme.media.medium} {
         grid-template-areas: 
-            "pSprites pName pName"
-            "pSprites pMoves pTypes";
-        grid-template-rows: 5.6rem 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+            "pSprites pName"
+            ". pTypes"
+            ". pMoves";
+        grid-template-rows: 5.6rem min-content min-content;
+        grid-template-columns: 1fr 2fr;
     }
     @media ${props => props.theme.media.large} {
         padding-bottom:4.8rem;
@@ -107,13 +109,28 @@ export const DetailPokemonSectionHeader = styled.div`
     border-top-right-radius:${props => props.theme.radius.big};
 `
 
+export const DetailPokemonSectionItems = styled.div`
+    display:flex;
+    flex-wrap:wrap;
+    padding:1.6rem;
+`
+
 export const DetailPokemonSectionItem = styled.div`
     font-size:1.4rem;
-    border-bottom:.2rem ${props => props.theme.colors.border} solid;
+    border:.2rem ${props => props.theme.colors.border} solid;
     padding:.8rem 1.6rem;
     color:${props => props.theme.colors.textSecondary};
-    &:last-child {
+    /* &:last-child {
         border-bottom:none;
+    } */
+    border-radius:999rem;
+    width:fit-content;
+    margin-right:.8rem;
+    margin-bottom:.8rem;
+
+    &:hover{
+        border:.2rem ${props => props.theme.colors.highlightSecondary} solid;
+        cursor:pointer;
     }
 `
 
