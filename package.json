@@ -9,7 +9,7 @@
     "lint:js": "eslint . --ext js,jsx",
     "lint:js:fix": "eslint . --ext js,jsx --fix",
     "test": "jest ./src/**/*",
-    "deploy:vercel": "npm run build && vercel ./dist"
+    "deploy:vercel": "npm run build && vercel"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
