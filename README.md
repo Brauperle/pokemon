@@ -1,5 +1,11 @@
-# Setup
-# Architecture
+## See demo
+https://pokemon-brauperle.vercel.app/
+## Setup
+```
+npm run dev     // dev server
+npm run build   // build project
+```
+## Architecture
 ```
 dist            // compiled assets (npm run build)
 public          // public assets un-touched by the application
@@ -10,15 +16,10 @@ src/
     index.js    // javascript entry-point
 index.html      // entry-point
 ```
-
-# Client state vs Server state
-
-# TODO
-```
-- Clean styles (transitions?)
-- Write test components & api
-- Cleanup bundle && deploy 
-- Bonus 
-    - add search 
-    - add pagination (or infinite list
-```
+## Packages
+- Application is using vite as build system/dev server
+- Client state is manage by out of the box React.Context
+- Server state (API) is manage by react-query
+- React-router is used for client side routing
+- Tests are using Jest & react-testing-library 
+- styled-components for styles
