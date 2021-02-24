@@ -46,8 +46,8 @@ export const ListPokemon = styled.article`
         margin-bottom:.8rem;
         margin-right:.8rem;
 
-        &:nth-child(6n),
-        &:last-child(){
+        &:nth-child(3n),
+        &:last-child{
             margin-right:0;
         }
     }
@@ -57,9 +57,33 @@ export const ListPokemon = styled.article`
         margin-bottom:1.6rem;
         margin-right:1.6rem;
 
-        &:nth-child(6n),
-        &:last-child(){
+        &:nth-child(3n) {
+            margin-right:1.6rem;
+        }
+        &:nth-child(6n){
             margin-right:0;
         }
+    }
+`
+export const ListPokemonShowMore = styled.button`
+    display:block;
+    max-width:fit-content;
+    margin:0 auto;
+    border:.2rem ${props => props.theme.colors.border} solid;
+    background:${props => props.theme.colors.backgroundSecondary};
+    box-shadow: ${props => props.theme.shadows.shadow4};
+    border-radius: 999rem;
+    padding:1.6rem 2.4rem;
+    font-size:2rem;
+    font-weight:600;
+    color:${props => props.theme.colors.textPrimary};
+    margin-top:2.4rem;
+    margin-bottom:2.4rem;
+    &:hover{
+        border:.2rem ${props => props.theme.colors.highlightSecondary} solid;
+        cursor:pointer;
+    }
+    &:disabled {
+        cursor:not-allowed;
     }
 `

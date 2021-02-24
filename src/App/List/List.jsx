@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../store/StoreProvider'
 import { Link } from 'react-router-dom'
-import { useQuery } from 'react-query'
-import { getPokemons } from '../../api/api'
+import { useInfiniteQuery } from 'react-query'
+import { getPokemons2 } from '../../api/api'
 import Container from '../Container/Container'
-import { ListContainer, ListPokemons, ListPokemon } from './List.styled'
+import { ListContainer, ListPokemons, ListPokemon, ListPokemonShowMore } from './List.styled'
 
 const List = () => {
   const {
@@ -13,10 +13,17 @@ const List = () => {
 
   const {
     data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
     isLoading,
     isError,
     isSuccess
-  } = useQuery('pokemons', () => getPokemons({ limit: 10000, offset: 0 }))
+  } = useInfiniteQuery('pokemons', getPokemons2, {
+    getNextPageParam: (lastPage, pages) => {
+      return lastPage.next
+    }
+  })
 
   return (
     <Container>
@@ -24,19 +31,40 @@ const List = () => {
         {isLoading && (<p>Loading...</p>)}
         {isError && (<p>Error..!?</p>)}
         {isSuccess && (
-          <ListPokemons data-testid="ListPokemons">
-            {data.results && data.results
-              .filter(pokemon => pokemon.name.toUpperCase().includes(state.search.toUpperCase()))
-              .map(pokemon => {
-                return (
-                  <ListPokemon key={pokemon.name} data-testid={pokemon.name}>
-                    <Link to={`/${pokemon.name}`}>
-                      {pokemon.name}
-                    </Link>
-                  </ListPokemon>
-                )
-              })}
-          </ListPokemons>
+          <>
+            <ListPokemons data-testid="ListPokemons">
+              {data.pages && data.pages
+                .map(group => {
+                  return (
+                    group.results
+                      .filter(pokemon => pokemon.name.toUpperCase().includes(state.search.toUpperCase()))
+                      .map(pokemon => {
+                        return (
+                          <ListPokemon key={pokemon.name} data-testid={pokemon.name}>
+                            <Link to={`/${pokemon.name}`}>
+                              {pokemon.name}
+                            </Link>
+                          </ListPokemon>
+                        )
+                      })
+                  )
+                })
+            }
+            </ListPokemons>
+            {!state.search && (
+              <ListPokemonShowMore disabled={isFetchingNextPage || !hasNextPage} type="button" onClick={() => {
+                fetchNextPage()
+              }}>
+                {
+                isFetchingNextPage
+                  ? 'Loading more Pokémon...'
+                  : hasNextPage
+                    ? 'Show 250 more Pokémon'
+                    : 'Nothing more to load'
+              }
+              </ListPokemonShowMore>
+            )}
+          </>
         )}
       </ListContainer>
     </Container>
