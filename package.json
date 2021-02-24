@@ -9,9 +9,10 @@
     "lint:js": "eslint . --ext js,jsx",
     "lint:js:fix": "eslint . --ext js,jsx --fix",
     "test": "jest ./src/**/*",
-    "deploy:vercel": "npm run build && vercel"
+    "deploy:vercel": "vercel"
   },
   "dependencies": {
+    "@babel/runtime": "^7.13.7",
     "lodash.debounce": "^4.0.8",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -21,10 +22,10 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.7",
     "@babel/preset-env": "^7.12.17",
     "@babel/preset-react": "^7.12.13",
     "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^17.1.0",
     "@testing-library/react": "^11.2.5",
     "@vitejs/plugin-react-refresh": "^1.1.0",
     "babel-jest": "^26.6.3",
@@ -37,7 +38,6 @@
     "eslint-plugin-react": "^7.22.0",
     "husky": "^5.0.9",
     "jest": "^26.6.3",
-    "regenerator-runtime": "^0.13.7",
     "stylelint": "^13.11.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
