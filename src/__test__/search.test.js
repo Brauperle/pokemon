@@ -6,7 +6,7 @@ import List from "../app/List/List";
 
 jest.mock("../api/api", () => {
     return {
-        getPokemons : () => {
+        getPokemons2 : () => {
             return new Promise(resolve => {
                 resolve({results:[
                     {

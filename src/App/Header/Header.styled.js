@@ -1,16 +1,13 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
-  padding-top:2.4rem;
   padding-bottom:2.4rem;
 
   @media ${props => props.theme.media.small} {
-    padding-top:3.2rem;
     padding-bottom:3.2rem;
   }
 
   @media ${props => props.theme.media.large} {
-    padding-top:4.8rem;
     padding-bottom:4.8rem;
   }
 `
