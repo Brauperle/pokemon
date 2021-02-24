@@ -9,17 +9,19 @@ npm run build   // build project
 ```
 dist            // compiled assets (npm run build)
 public          // public assets un-touched by the application
-src/        
+src/    
+    __test__    // test folder (npm run test)    
     api/        // api layer
     app/        // application components & logic
     store/      // client side redux-like store
     index.js    // javascript entry-point
 index.html      // entry-point
 ```
-## Packages
-- Application is using vite as build system/dev server
-- Client state is manage by out of the box React.Context
-- Server state (API) is manage by react-query
-- React-router is used for client side routing
-- Tests are using Jest & react-testing-library 
-- styled-components for styles
+## Dependencies
+- Build/Development tool: vite https://github.com/vitejs/vite
+- Client state: React Context https://reactjs.org/docs/context.html
+- Server state (API): react-query https://github.com/tannerlinsley/react-query
+- Client Routing: react-router https://github.com/ReactTraining/react-router
+- CSS-in-JS: styled-components https://github.com/styled-components/styled-components
+- Javascript testing lib: jest https://github.com/facebook/jest
+- React testing lib: https://github.com/testing-library/react-testing-library
