@@ -7,6 +7,7 @@ import {
   DetailContainer,
   DetailPokemonSection,
   DetailPokemonSectionHeader,
+  DetailPokemonSectionItems,
   DetailPokemonSectionItem,
   DetailPokemonImg
 } from './Detail.styled'
@@ -44,24 +45,28 @@ const Detail = () => {
 
             <DetailPokemonSection gridArea="pMoves">
               <DetailPokemonSectionHeader>Moves List</DetailPokemonSectionHeader>
-              {data && data.moves && data.moves.map((move, i) => {
-                return (
-                  <DetailPokemonSectionItem key={`move_${i}`}>
-                    {move.move.name}
-                  </DetailPokemonSectionItem>
-                )
-              })}
+              <DetailPokemonSectionItems>
+                {data && data.moves && data.moves.map((move, i) => {
+                  return (
+                    <DetailPokemonSectionItem key={`move_${i}`}>
+                      {move.move.name}
+                    </DetailPokemonSectionItem>
+                  )
+                })}
+              </DetailPokemonSectionItems>
             </DetailPokemonSection>
 
             <DetailPokemonSection gridArea="pTypes">
               <DetailPokemonSectionHeader>Types List</DetailPokemonSectionHeader>
-              {data && data.types && data.types.map((type, i) => {
-                return (
-                  <DetailPokemonSectionItem key={`type_${i}`}>
-                    {type.type.name}
-                  </DetailPokemonSectionItem>
-                )
-              })}
+              <DetailPokemonSectionItems>
+                {data && data.types && data.types.map((type, i) => {
+                  return (
+                    <DetailPokemonSectionItem key={`type_${i}`}>
+                      {type.type.name}
+                    </DetailPokemonSectionItem>
+                  )
+                })}
+              </DetailPokemonSectionItems>
             </DetailPokemonSection>
           </>
         )}

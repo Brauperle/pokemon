@@ -10,7 +10,6 @@ export const ListPokemons = styled.div`
 `
 
 export const ListPokemon = styled.article`
-    padding:.8rem;
     background:${props => props.theme.colors.backgroundSecondary};
     border-bottom:.2rem ${props => props.theme.colors.border} solid;
     overflow:hidden;
@@ -19,7 +18,6 @@ export const ListPokemon = styled.article`
     font-size:1.4rem;
     font-weight:600;
 
-    flex-grow:1;
     flex-shrink:0;
 
     width:calc(100%);
@@ -27,6 +25,7 @@ export const ListPokemon = styled.article`
     & a {
         display:block;
         text-transform:capitalize;
+        padding:.8rem;
     }
 
     &:hover {
@@ -42,7 +41,8 @@ export const ListPokemon = styled.article`
     }
 
     @media ${props => props.theme.media.medium} {
-        width:calc(100%/3 - .8rem);
+        width:calc(100%/3 - .53333rem);
+
         margin-bottom:.8rem;
         margin-right:.8rem;
 
@@ -53,7 +53,7 @@ export const ListPokemon = styled.article`
     }
 
     @media ${props => props.theme.media.large} {
-        width:calc(100%/6 - 3.2rem);
+        width:calc(100%/6 - 1.33333rem);
         margin-bottom:1.6rem;
         margin-right:1.6rem;
 
@@ -63,6 +63,7 @@ export const ListPokemon = styled.article`
         &:nth-child(6n){
             margin-right:0;
         }
+
     }
 `
 export const ListPokemonShowMore = styled.button`
